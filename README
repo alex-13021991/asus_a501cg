@@ -2,4 +2,6 @@ How to build zenfone kernel for a501cg
 
 	cd [working dir]
 	./build.sh
+
+bzImage to find in dir 'build'
 	
