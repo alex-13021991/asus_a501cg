@@ -3,7 +3,9 @@
 mkdir -p ~/asus_a501cg/build
 mkdir -p ~/asus_a501cg/out
 rm ~/asus_a501cg/build/bzImage
-make -j5 -f KernelMakefile TARGET_DEVICE=a500cg build_bzImage
+rm -rf ~/asus_a501cg/build/lib
+#make -j5 -f KernelMakefile TARGET_DEVICE=a500cg build_bzImage
+make -j5 -f KernelMakefile modules_install
 find ~/asus_a501cg/out/a500cg -type f -name bzImage -exec cp {} ~/asus_a501cg/build/ \;
 mkdir -p ~/asus_a501cg/build/lib
 mkdir -p ~/asus_a501cg/build/lib/modules
