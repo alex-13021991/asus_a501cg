@@ -1,0 +1,27 @@
+git clone https://github.com/alex-13021991/asus_a501cg.git
+cd /home/dell/asus_a501cg
+git add .  добавляем в гид
+git status  отслеживаем изменения
+git commit -m "Add project" делем коммит
+git tag v1.1 метка версии
+
+git push отправить изменения на гитхаб
+git push --tags  обновить метки
+
+git push origin master
+
+
+++++++++++++++++++
+git add .  добавляем в гид
+git status  отслеживаем изменения
+git commit -m "Add project" делаем коммит
+git push отправить изменения на гитхаб
+++++++++++++++++++
+
+git checkout отменить все локальные изменения ???
+git log --pretty=oneline репозитории на данном этапе
+git reset --hard 45cfaa8c349bba85c7c6b4dbfea548a82b4c6480  сбросить до какой либо
+
+
+git commit -m "adding BFQ scheduling algorithm"
+git pull скачать с гитхаба изменения
