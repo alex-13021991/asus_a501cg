@@ -92,6 +92,13 @@ config IOSCHED_SIOPLUS
 	the starvation of async reads against sync reads; starved write requests counter
 	only counts when there actually are write requests in the queue; fixed a bug).
 
+config IOSCHED_VR
+	tristate "V(R) I/O scheduler"
+	default y
+	---help---
+	Requests are chosen according to SSTF with a penalty of rev_penalty
+	for switching head direction.
+
 config CGROUP_BFQIO
 	bool "BFQ hierarchical scheduling support"
 	depends on CGROUPS && IOSCHED_BFQ=y
@@ -146,6 +153,9 @@ choice
 	config DEFAULT_SIOPLUS
 		bool "SIOPLUS" if IOSCHED_SIOPLUS=y
 
+	config DEFAULT_VR
+		bool "VR" if IOSCHED_VR=y
+
 	config DEFAULT_NOOP
 		bool "No-op"
 
@@ -161,6 +171,7 @@ config DEFAULT_IOSCHED
 	default "row" if DEFAULT_ROW
 	default "sio" if DEFAULT_SIO
 	default "sioplus" if DEFAULT_SIOPLUS
+	default "vr" if DEFAULT_VR
 	default "noop" if DEFAULT_NOOP
 
 endmenu
