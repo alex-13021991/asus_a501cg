@@ -153,6 +153,13 @@ config CPU_FREQ_DEFAULT_GOV_YANKACTIVE
 	and can be achieved using interactive with a script. This is added for
 	simplification purposes for myself.
 
+config CPU_FREQ_DEFAULT_GOV_CONSERVATIVEX
+	bool "conservativex"
+	select CPU_FREQ_GOV_CONSERVATIVEX
+	select CPU_FREQ_GOV_PERFORMANCE
+ 	help
+	 A less aggressive version of conservative governor
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -270,6 +277,12 @@ config CPU_FREQ_GOV_YANKACTIVE
 	  The governor is based on interactive with just different default settings
 	  and can be achieved using interactive with a script. This is added for
 	  simplification purposes for myself.
+
+config CPU_FREQ_GOV_CONSERVATIVEX
+	tristate "'conservativeX' cpufreq policy governor"
+	depends on CPU_FREQ	
+	help
+	A less aggressive version of conservative governor
 
 config CPU_FREQ_GOV_CONSERVATIVE
 	tristate "'conservative' cpufreq governor"
