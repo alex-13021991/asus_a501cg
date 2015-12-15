@@ -1,0 +1,6 @@
+need wine
+	sudo apt-get wine
+to pack 
+	./pack.sh
+to unpack
+	./unpack.sh

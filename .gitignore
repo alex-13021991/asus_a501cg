@@ -11,4 +11,6 @@
 #
 /build
 /out
-/boot_img_tool_linux_a501cg
+/boot_img_tool_linux_a501cg/boot_
+/boot_img_tool_linux_a501cg/*.img
+/boot_img_tool_linux_a501cg/*.zip
