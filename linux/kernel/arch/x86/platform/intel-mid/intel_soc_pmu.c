@@ -22,6 +22,7 @@
 #include <linux/proc_fs.h>
 #include <asm/intel_mid_rpmsg.h>
 
+#include <linux/quickwakeup.h>
 #include <asm/hypervisor.h>
 #include <asm/xen/hypercall.h>
 
@@ -2128,6 +2129,7 @@ static const struct platform_suspend_ops mid_suspend_ops = {
 	.prepare = mid_suspend_prepare,
 	.prepare_late = mid_suspend_prepare_late,
 	.enter = mid_suspend_enter,
+ 	.suspend_again = quickwakeup_suspend_again,
 	.end = mid_suspend_end,
 };
 
