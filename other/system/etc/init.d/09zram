@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+echo 200000000 > /sys/block/zram0/disksize
+mkswap /dev/block/zram0
+swapon /dev/block/zram0 
