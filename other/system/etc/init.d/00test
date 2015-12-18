@@ -1,0 +1,12 @@
+#!/system/bin/sh
+#Init.d Test
+busybox mount -o remount,rw -t auto /system
+busybox mount -o remount,rw -t auto /data
+
+if [ -e /data/Test.log ]; then
+rm /data/Test.log
+fi
+
+echo  Ryuinferno @ XDA 2012 > /data/Test.log
+echo  Init.d is working !!! >> /data/Test.log
+
