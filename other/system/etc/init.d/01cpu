@@ -1,0 +1,25 @@
+#!/system/bin/sh
+# alex-13021991
+
+# Set Scaling Governor
+
+sleep 60
+
+GOVERNOR="lagfree"
+
+echo 1 > /sys/devices/system/cpu/cpu1/online
+echo 1 > /sys/devices/system/cpu/cpu2/online
+echo 1 > /sys/devices/system/cpu/cpu3/online
+echo $GOVERNOR > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo $GOVERNOR > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+echo $GOVERNOR > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+echo $GOVERNOR > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+
+# Set IO Sheduler
+
+sleep 10
+
+SHEDULER="zen"
+
+echo $SHEDULER > /sys/block/mmcblk0/queue/scheduler
+echo $SHEDULER > /sys/block/mmcblk1/queue/scheduler
