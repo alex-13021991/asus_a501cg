@@ -140,13 +140,13 @@ static int sfi_processor_get_performance_states(struct sfi_processor *pr)
   * State [-2]: core_frequency[2500 / 2000] transition_latency[100] control[0x1e59] +84MHz	100	0x102
   * State [-1]: core_frequency[2416 / 1916] transition_latency[100] control[0x1d57] +83MHz	100	0x103
   */
- 	pr->performance->states[0].core_frequency = sfi_cpufreq_array[0].freq_mhz + 133 + 134 + 133; //Max-freq + 167MHz
+ 	pr->performance->states[0].core_frequency = sfi_cpufreq_array[0].freq_mhz + 133 + 133 + 134; //Max-freq + 400MHz (2000MHz)
  	pr->performance->states[0].transition_latency =	sfi_cpufreq_array[0].latency;
- 	pr->performance->states[0].control = sfi_cpufreq_array[0].ctrl_val + 0x102 + 0x103 + 0x102;
- 	pr->performance->states[1].core_frequency = sfi_cpufreq_array[0].freq_mhz + 133 + 133; //Max-freq + 83MHz
+ 	pr->performance->states[0].control = sfi_cpufreq_array[0].ctrl_val + 0x102 + 0x102 + 0x103;
+ 	pr->performance->states[1].core_frequency = sfi_cpufreq_array[0].freq_mhz + 133 + 133; //Max-freq + 266MHz (1866MHz)
  	pr->performance->states[1].transition_latency = sfi_cpufreq_array[0].latency;
  	pr->performance->states[1].control = sfi_cpufreq_array[0].ctrl_val + 0x102 + 0x102;
- 	pr->performance->states[2].core_frequency = sfi_cpufreq_array[0].freq_mhz + 133; //Max-freq + 83MHz
+ 	pr->performance->states[2].core_frequency = sfi_cpufreq_array[0].freq_mhz + 133; //Max-freq + 133MHz (1733MHz)
  	pr->performance->states[2].transition_latency = sfi_cpufreq_array[0].latency;
  	pr->performance->states[2].control = sfi_cpufreq_array[0].ctrl_val + 0x102;
  	
@@ -187,18 +187,18 @@ static int sfi_processor_get_performance_states(struct sfi_processor *pr)
 	
 //+State [23]: core_frequency[416] transition_latency[100] control[0x52f] -84MHz	100	0x101
 //+State [24]: core_frequency[333] transition_latency[100] control[0x42e] -83MHz	100	0x101
-	pr->performance->states[sfi_cpufreq_num-3].core_frequency = sfi_cpufreq_array[last_PState].freq_mhz - 134; //666MHz
+	pr->performance->states[sfi_cpufreq_num-3].core_frequency = sfi_cpufreq_array[last_PState].freq_mhz - 134; //Min-freq - 134MHz (666MHz)
 	pr->performance->states[sfi_cpufreq_num-3].transition_latency = sfi_cpufreq_array[last_PState].latency;
 	pr->performance->states[sfi_cpufreq_num-3].control = sfi_cpufreq_array[last_PState].ctrl_val - 0x101;
-	pr->performance->states[sfi_cpufreq_num-2].core_frequency = sfi_cpufreq_array[last_PState].freq_mhz - 134 - 133; //533MHz
+	pr->performance->states[sfi_cpufreq_num-2].core_frequency = sfi_cpufreq_array[last_PState].freq_mhz - 134 - 133; //Min-freq - 267MHz (533MHz)
 	pr->performance->states[sfi_cpufreq_num-2].transition_latency = sfi_cpufreq_array[last_PState].latency;
 	pr->performance->states[sfi_cpufreq_num-2].control = sfi_cpufreq_array[last_PState].ctrl_val - 0x101 - 0x101;
-	pr->performance->states[sfi_cpufreq_num-1].core_frequency = sfi_cpufreq_array[last_PState].freq_mhz - 134 - 133 - 133; //400MHz
+	pr->performance->states[sfi_cpufreq_num-1].core_frequency = sfi_cpufreq_array[last_PState].freq_mhz - 134 - 133 - 133; //Min-freq - 400MHz (400MHz)
 	pr->performance->states[sfi_cpufreq_num-1].transition_latency = sfi_cpufreq_array[last_PState].latency;
 	pr->performance->states[sfi_cpufreq_num-1].control = sfi_cpufreq_array[last_PState].ctrl_val - 0x101 - 0x101 - 0x101;
-//	pr->performance->states[sfi_cpufreq_num-1].core_frequency = sfi_cpufreq_array[last_PState].freq_mhz - 134 - 133 - 133 - 84; //316MHz
+//	pr->performance->states[sfi_cpufreq_num-1].core_frequency = sfi_cpufreq_array[last_PState].freq_mhz - 134 - 133 - 133 - 84; //Min-freq - 484MHz (316MHz)
 //	pr->performance->states[sfi_cpufreq_num-1].transition_latency = sfi_cpufreq_array[last_PState].latency;
-//	pr->performance->states[sfi_cpufreq_num-1].control = sfi_cpufreq_array[last_PState].ctrl_val - 0x101 - 0x101 - 0x101 - 0x101;
+//	pr->performance->states[sfi_cpufreq_num-1].control = sfi_cpufreq_array[last_PState].ctrl_val - 0x101 - 0x101 - 0x101 - 0x101; ???
 		
 	for(i = sfi_cpufreq_num - 3; i<sfi_cpufreq_num; i++)
 	{
