@@ -136,7 +136,7 @@ inline static void tput_set_performance_mode(bool en)
 		boost_mode = 2;
 	else
 		boost_mode = 0;
-	set_cpufreq_boost(boost_mode);
+//	set_cpufreq_boost(boost_mode);
 }
 
 static int tput_monitor_thread(void *num)
