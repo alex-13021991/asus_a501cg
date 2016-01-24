@@ -1,0 +1,4 @@
+#!/system/bin/sh
+# alex-13021991
+
+echo "500" > /sys/kernel/mm/uksm/sleep_millisecs
