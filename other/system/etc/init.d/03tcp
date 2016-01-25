@@ -1,0 +1,5 @@
+#!/system/bin/sh
+# alex-13021991
+
+echo westwood > /proc/sys/net/ipv4/tcp_congestion_control
+
