@@ -28,6 +28,7 @@ find ~/asus_a501cg/out/a500cg -type f -name t4k35.ko -exec cp {} ~/asus_a501cg/b
 find ~/asus_a501cg/out/a500cg -type f -name test_nx.ko -exec cp {} ~/asus_a501cg/build/lib/modules/ \;
 find ~/asus_a501cg/out/a500cg -type f -name videobuf-core.ko -exec cp {} ~/asus_a501cg/build/lib/modules/ \;
 find ~/asus_a501cg/out/a500cg -type f -name videobuf-vmalloc.ko -exec cp {} ~/asus_a501cg/build/lib/modules/ \;
+find ~/asus_a501cg/out/a500cg -type f -name tcp_bic.ko -exec cp {} ~/asus_a501cg/build/lib/modules/ \;
 mkdir -p ~/asus_a501cg/build/lib/other_modules
 find ~/asus_a501cg/out/a500cg -type f -name *.ko -exec cp {} ~/asus_a501cg/build/lib/other_modules/ \;
 rm -rf ~/asus_a501cg/out
