@@ -1,4 +1,5 @@
 #!/system/bin/sh
 # alex-13021991
 
-echo "1" > /sys/kernel/mm/uksm/run
+echo 20 > /sys/kernel/mm/uksm/max_cpu_percentage
+echo 1 > /sys/kernel/mm/uksm/run
