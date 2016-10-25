@@ -16,6 +16,6 @@ cd boot_img_tool
 wine AndImgTool.exe boot_ boot.img
 cd ~/asus_a501cg/
 mv ~/asus_a501cg/boot_img_tool/boot.img ~/asus_a501cg/build/
-rm ~/asus_a501cg/boot_img_tool/boot_
+rm -rf ~/asus_a501cg/boot_img_tool/boot_
 rm ~/asus_a501cg/build/bzImage
 rm -rf ~/asus_a501cg/build/modules
